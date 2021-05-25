@@ -16,7 +16,9 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    mytcpserver.cpp
+    mytcpserver.cpp \
+    serverthread.cpp
 
 HEADERS += \
-    mytcpserver.h
+    mytcpserver.h \
+    serverthread.h

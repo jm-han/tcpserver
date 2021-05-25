@@ -6,7 +6,7 @@
 #include <QTcpServer>
 #include <QDebug>
 
-class MyTcpServer : public QObject
+class MyTcpServer : public QTcpServer
 {
     Q_OBJECT
 public:
@@ -15,10 +15,16 @@ public:
 signals:
     
 public slots:
-    void newConnection();
+    //void newConnection();
 
 private:
-    QTcpServer *server;
+    //QTcpServer *server;
+
+private:
+    void incomingConnection(int sockDesc);
+
+private slots:
+    void clientDisconnected(int sockDesc);
 };
 
 #endif // MYTCPSERVER_H

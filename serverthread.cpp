@@ -35,7 +35,7 @@ void serverThread::sendDataSlot(int sockDesc, const QByteArray &data)
         return ;
     }
 
-    emit sendData(sockDesc, data);
+    emit sendData(m_sockDesc, data);
 }
 
 void serverThread::recvDataSlot(const QString &ip, const QByteArray &data)

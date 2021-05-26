@@ -18,9 +18,22 @@ TEMPLATE = app
 SOURCES += main.cpp \
     mysocket.cpp \
     mytcpserver.cpp \
-    serverthread.cpp
+    serverthread.cpp \
+    avilib.cpp \
+    camerathread.cpp \
+    color.cpp \
+    utils.cpp \
+    v4l2uvc.cpp
 
 HEADERS += \
     mysocket.h \
     mytcpserver.h \
-    serverthread.h
+    serverthread.h \
+    avilib.h \
+    camerathread.h \
+    color.h \
+    huffman.h \
+    utils.h \
+    uvc_compat.h \
+    uvcvideo.h \
+    v4l2uvc.h

@@ -1,9 +1,14 @@
 #include "mytcpserver.h"
 #include "serverthread.h"
+#include "camerathread.h"
 
 MyTcpServer::MyTcpServer(QObject *parent) :
     QTcpServer(parent)
 {
+
+    camera=new camerathread;
+    camera->start();
+
 //    server = new QTcpServer(this);
 
 //    // whenever a user connects, it will emit signal
@@ -47,8 +52,8 @@ void MyTcpServer::incomingConnection(int sockDesc)
 //    connect(thread, SIGNAL(dataReady(const QString&, const QByteArray&)),
 //            m_dialog, SLOT(recvData(const QString&, const QByteArray&)));
 
-//    connect(m_dialog, SIGNAL(sendData(int, const QByteArray&)),
-//            thread, SLOT(sendDataSlot(int, const QByteArray&)));
+    connect(camera, SIGNAL(sendData(int, const QByteArray&)),
+            thread, SLOT(sendDataSlot(int, const QByteArray&)));
 
     thread->start();
 }

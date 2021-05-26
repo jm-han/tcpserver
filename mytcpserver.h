@@ -5,6 +5,7 @@
 #include <QTcpSocket>
 #include <QTcpServer>
 #include <QDebug>
+#include "camerathread.h"
 
 class MyTcpServer : public QTcpServer
 {
@@ -13,12 +14,14 @@ public:
     explicit MyTcpServer(QObject *parent = 0);
     
 signals:
+
     
 public slots:
     //void newConnection();
 
 private:
     //QTcpServer *server;
+    camerathread *camera = nullptr;
 
 private:
     void incomingConnection(int sockDesc);
